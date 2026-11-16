@@ -4,6 +4,16 @@ export type Decision = { tech: string; reason: Localized }
 export type ArchPart = { layer: Localized; detail: Localized }
 export type Metric = { value: string; label: Localized }
 export type ProjectVisual = 'maisvida' | 'automation' | 'prefeitura' | 'mei'
+export type GalleryImage = {
+  src: string
+  alt: Localized
+  caption: Localized
+  frame: 'phone' | 'browser'
+  url?: string
+  tag: string
+  wide?: boolean
+  fit?: 'cover' | 'contain'
+}
 
 export type Project = {
   slug: string
@@ -24,6 +34,7 @@ export type Project = {
   stack: string[]
   tags: Localized[]
   metrics: Metric[]
+  gallery: GalleryImage[]
   repo: string
   visual: ProjectVisual
   accent: string
@@ -172,6 +183,115 @@ export const projects: Project[] = [
       { value: '80', label: { pt: 'testes automatizados', en: 'automated tests' } },
       { value: '100%', label: { pt: 'offline', en: 'offline' } },
     ],
+    gallery: [
+      {
+        src: '/projects/maisvida/onboarding.webp',
+        alt: {
+          pt: 'Tela de onboarding do app Mais Vida com vídeo de boas-vindas',
+          en: 'Mais Vida onboarding screen with a welcome video',
+        },
+        caption: {
+          pt: 'Onboarding editorial com vídeo, identidade em petróleo e dourado e suporte a tema claro/escuro.',
+          en: 'Editorial onboarding with video, petrol-and-gold identity and light/dark theme support.',
+        },
+        frame: 'phone',
+        tag: 'Mobile',
+      },
+      {
+        src: '/projects/maisvida/home.webp',
+        alt: {
+          pt: 'Home do app Mais Vida com a carta do dia',
+          en: 'Mais Vida home screen with the card of the day',
+        },
+        caption: {
+          pt: 'Home com carta do dia, progresso do plano gratuito e atalhos para cartas e organizações.',
+          en: 'Home with the card of the day, free-plan progress and shortcuts to cards and organizations.',
+        },
+        frame: 'phone',
+        tag: 'Mobile',
+      },
+      {
+        src: '/projects/maisvida/cards.webp',
+        alt: {
+          pt: 'Catálogo de cartas do app Mais Vida',
+          en: 'Mais Vida card catalog',
+        },
+        caption: {
+          pt: 'Catálogo com 50 cartas por categoria, favoritos e leitura em tela cheia com áudio.',
+          en: 'Catalog with 50 cards per category, favorites and full-screen reading with audio.',
+        },
+        frame: 'phone',
+        tag: 'Mobile',
+      },
+      {
+        src: '/projects/maisvida/leitura.webp',
+        alt: {
+          pt: 'Leitura de carta em tela cheia com player de áudio',
+          en: 'Full-screen card reading with audio player',
+        },
+        caption: {
+          pt: 'Leitura em tela cheia com arte editorial, áudio narrado e progresso de reprodução.',
+          en: 'Full-screen reading with editorial art, narrated audio and playback progress.',
+        },
+        frame: 'phone',
+        tag: 'Mobile',
+      },
+      {
+        src: '/projects/maisvida/premium.webp',
+        alt: {
+          pt: 'Tela de assinatura premium do app Mais Vida',
+          en: 'Mais Vida premium subscription screen',
+        },
+        caption: {
+          pt: 'Assinatura premium demonstrativa: cartas ilimitadas, áudios e conteúdos exclusivos.',
+          en: 'Demo premium subscription: unlimited cards, audio and exclusive content.',
+        },
+        frame: 'phone',
+        tag: 'Premium',
+      },
+      {
+        src: '/projects/maisvida/pagamento.webp',
+        alt: {
+          pt: 'Tela de pagamento PIX com QR Code demonstrativo',
+          en: 'PIX payment screen with demo QR code',
+        },
+        caption: {
+          pt: 'PIX demonstrativo com BR Code estruturalmente válido, copia e cola e simulação de pagamento — sem cobrança real.',
+          en: 'Demo PIX with a structurally valid BR Code, copy-and-paste and payment simulation — no real charge.',
+        },
+        frame: 'phone',
+        tag: 'PIX',
+      },
+      {
+        src: '/projects/maisvida/home-dark.webp',
+        alt: {
+          pt: 'Home do app Mais Vida no tema escuro',
+          en: 'Mais Vida home screen in dark theme',
+        },
+        caption: {
+          pt: 'Tema escuro aplicado ao mesmo design system, com contraste e hierarquia preservados.',
+          en: 'Dark theme applied to the same design system, preserving contrast and hierarchy.',
+        },
+        frame: 'phone',
+        tag: 'Mobile',
+      },
+      {
+        src: '/projects/maisvida/maisvida-actions.webp',
+        alt: {
+          pt: 'Execuções de CI e build de APK no GitHub Actions',
+          en: 'CI and APK build runs on GitHub Actions',
+        },
+        caption: {
+          pt: 'Pipeline de CI e build do APK no GitHub Actions, com testes e análise estática a cada commit.',
+          en: 'CI and APK build pipeline on GitHub Actions, running tests and static analysis on every commit.',
+        },
+        frame: 'browser',
+        url: 'github.com/GuiNardiSS/Mais-Vida-em-Nossas-Vidas/actions',
+        tag: 'CI/CD',
+        wide: true,
+        fit: 'contain',
+      },
+    ],
     repo: 'https://github.com/GuiNardiSS/Mais-Vida-em-Nossas-Vidas',
     visual: 'maisvida',
     accent: 'from-amber-200 via-violet-400 to-cyan-300',
@@ -318,6 +438,38 @@ export const projects: Project[] = [
       { value: '3', label: { pt: 'estados monitorados', en: 'states monitored' } },
       { value: '~8min', label: { pt: 'por execução', en: 'per run' } },
     ],
+    gallery: [
+      {
+        src: '/projects/automation-actions.webp',
+        alt: {
+          pt: 'Histórico de execuções do Automation-YUL no GitHub Actions',
+          en: 'Automation-YUL run history on GitHub Actions',
+        },
+        caption: {
+          pt: '273 execuções registradas, incluindo as cinco diárias de 08:17 a 16:17 e o resumo de saúde do fim do dia.',
+          en: '273 recorded runs, including the five daily executions from 08:17 to 16:17 and the end-of-day health summary.',
+        },
+        frame: 'browser',
+        url: 'github.com/GuiNardiSS/Automation-YUL/actions',
+        tag: 'CI/CD',
+        wide: true,
+        fit: 'contain',
+      },
+      {
+        src: '/projects/automation-code.webp',
+        alt: {
+          pt: 'Código do workflow poll.yml no GitHub',
+          en: 'poll.yml workflow code on GitHub',
+        },
+        caption: {
+          pt: 'Workflow single-shot com dispatch externo, controle de concorrência e timeout calibrado para o custo do runner.',
+          en: 'Single-shot workflow with external dispatch, concurrency control and a timeout sized to the runner cost.',
+        },
+        frame: 'browser',
+        url: 'github.com/GuiNardiSS/Automation-YUL/blob/master/.github/workflows/poll.yml',
+        tag: 'YAML',
+      },
+    ],
     repo: 'https://github.com/GuiNardiSS/Automation-YUL',
     visual: 'automation',
     accent: 'from-cyan-300 via-sky-400 to-violet-400',
@@ -450,6 +602,78 @@ export const projects: Project[] = [
       { value: '111', label: { pt: 'serviços mapeados', en: 'services mapped' } },
       { value: 'SPA', label: { pt: 'build estático', en: 'static build' } },
     ],
+    gallery: [
+      {
+        src: '/projects/prefeitura-home.webp',
+        alt: {
+          pt: 'Home do portal da Prefeitura de São José com serviços em destaque',
+          en: 'São José city portal home with featured services',
+        },
+        caption: {
+          pt: 'Home com serviços em destaque, carrossel institucional e atalhos para os principais canais.',
+          en: 'Home with featured services, institutional carousel and shortcuts to the main channels.',
+        },
+        frame: 'browser',
+        url: 'saojose.sc.gov.br',
+        tag: 'Web',
+      },
+      {
+        src: '/projects/prefeitura-servicos.webp',
+        alt: {
+          pt: 'Página com todos os serviços disponíveis no portal',
+          en: 'Page listing every service available on the portal',
+        },
+        caption: {
+          pt: 'Catálogo com 111 serviços disponíveis, busca e agrupamento por área de atendimento.',
+          en: 'Catalog with 111 available services, search and grouping by service area.',
+        },
+        frame: 'browser',
+        url: 'saojose.sc.gov.br/todos-os-servicos',
+        tag: 'Web',
+      },
+      {
+        src: '/projects/prefeitura-empresa.webp',
+        alt: {
+          pt: 'Área Sou Empresa do portal da Prefeitura',
+          en: 'Sou Empresa area of the city portal',
+        },
+        caption: {
+          pt: 'Área Sou Empresa com alvarás, notas fiscais, processos online e integrações externas.',
+          en: 'Sou Empresa area with licenses, invoices, online processes and external integrations.',
+        },
+        frame: 'browser',
+        url: 'saojose.sc.gov.br/sou-empresa',
+        tag: 'Web',
+      },
+      {
+        src: '/projects/prefeitura-transparencia.webp',
+        alt: {
+          pt: 'Portal da Transparência da Prefeitura de São José',
+          en: 'São José transparency portal',
+        },
+        caption: {
+          pt: 'Portal da Transparência com controle interno, radar público, ouvidoria e diário oficial.',
+          en: 'Transparency portal with internal control, public radar, ombudsman and official gazette.',
+        },
+        frame: 'browser',
+        url: 'saojose.sc.gov.br/portal-transparencia',
+        tag: 'Web',
+      },
+      {
+        src: '/projects/prefeitura-cidade.webp',
+        alt: {
+          pt: 'Página A Cidade com mapa e conteúdo institucional',
+          en: 'A Cidade page with map and institutional content',
+        },
+        caption: {
+          pt: 'Página A Cidade com conteúdo institucional e mapa de localização da sede.',
+          en: 'A Cidade page with institutional content and a map of the city hall location.',
+        },
+        frame: 'browser',
+        url: 'saojose.sc.gov.br/cidade',
+        tag: 'Web',
+      },
+    ],
     repo: 'https://github.com/GuiNardiSS/site-prefeitura',
     visual: 'prefeitura',
     accent: 'from-sky-300 via-blue-400 to-emerald-300',
@@ -581,6 +805,78 @@ export const projects: Project[] = [
       { value: '6+', label: { pt: 'fluxos de serviço', en: 'service flows' } },
       { value: 'PDF', label: { pt: 'gerado no cliente', en: 'generated client-side' } },
       { value: '100%', label: { pt: 'estático', en: 'static' } },
+    ],
+    gallery: [
+      {
+        src: '/projects/mei-home.webp',
+        alt: {
+          pt: 'Catálogo de serviços do Espaço do Empreendedor',
+          en: 'Espaço do Empreendedor service catalog',
+        },
+        caption: {
+          pt: 'Catálogo de serviços do Espaço do Empreendedor, com fluxos para abertura, requerimentos e termos.',
+          en: 'Espaço do Empreendedor service catalog, with flows for registration, filings and terms.',
+        },
+        frame: 'browser',
+        url: 'espaco-do-empreendedor/servicos',
+        tag: 'Web',
+      },
+      {
+        src: '/projects/mei-form.webp',
+        alt: {
+          pt: 'Formulário de abertura de MEI com perguntas condicionais',
+          en: 'MEI registration form with conditional questions',
+        },
+        caption: {
+          pt: 'Formulário de abertura de MEI com perguntas condicionais, textos de apoio e declaração de ciência.',
+          en: 'MEI registration form with conditional questions, supporting text and an acknowledgment statement.',
+        },
+        frame: 'browser',
+        url: 'espaco-do-empreendedor/atendimento-mei-abertura',
+        tag: 'Web',
+      },
+      {
+        src: '/projects/mei-simples.webp',
+        alt: {
+          pt: 'Requerimento de reconsideração do Simples Nacional',
+          en: 'Simples Nacional reconsideration form',
+        },
+        caption: {
+          pt: 'Requerimento de reconsideração do Simples Nacional com máscaras, data e texto gerado automaticamente.',
+          en: 'Simples Nacional reconsideration form with masks, date and automatically generated text.',
+        },
+        frame: 'browser',
+        url: 'espaco-do-empreendedor/requerimento-simples-nacional',
+        tag: 'Web',
+      },
+      {
+        src: '/projects/mei-ressarcimento.webp',
+        alt: {
+          pt: 'Requerimento de ressarcimento de valores com dados bancários',
+          en: 'Value reimbursement form with bank details',
+        },
+        caption: {
+          pt: 'Ressarcimento de valores com dados bancários, validação de campos e fundamentação legal.',
+          en: 'Value reimbursement with bank details, field validation and legal basis.',
+        },
+        frame: 'browser',
+        url: 'espaco-do-empreendedor/requerimento-ressarcimento-de-valores',
+        tag: 'Web',
+      },
+      {
+        src: '/projects/mei-criar.webp',
+        alt: {
+          pt: 'Formulário de criação de requerimento genérico',
+          en: 'Generic request creation form',
+        },
+        caption: {
+          pt: 'Criação de requerimento genérico com campos guiados e geração de documento no navegador.',
+          en: 'Generic request creation with guided fields and in-browser document generation.',
+        },
+        frame: 'browser',
+        url: 'espaco-do-empreendedor/criar-requerimento',
+        tag: 'Web',
+      },
     ],
     repo: 'https://github.com/GuiNardiSS/rework-mei',
     visual: 'mei',

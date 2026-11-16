@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Images } from 'lucide-react'
 import { projects } from '../data/projects'
 import { useI18n } from '../i18n/LanguageContext'
 import { ProjectVisual } from './ProjectVisual'
@@ -67,10 +67,17 @@ export function FeaturedProjects() {
                     ))}
                   </div>
 
-                  <Link to={`/projeto/${project.slug}`} className="link-arrow mt-7 inline-flex">
-                    {t('work.viewCase')}
-                    <ArrowUpRight size={15} />
-                  </Link>
+                  <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+                    <Link to={`/projeto/${project.slug}`} className="link-arrow">
+                      {t('work.viewCase')}
+                      <ArrowUpRight size={15} />
+                    </Link>
+                    <span className="inline-flex items-center gap-1.5 font-mono text-[0.62rem] uppercase tracking-[0.1em] text-white/30">
+                      <Images size={12} />
+                      {project.gallery.length}{' '}
+                      {project.gallery.length === 1 ? t('gallery.countOne') : t('gallery.count')}
+                    </span>
+                  </div>
                 </Reveal>
               </article>
             )

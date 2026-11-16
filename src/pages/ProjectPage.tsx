@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2, Github } from 'lucide-react'
 import { ArchitectureDiagram } from '../components/ArchitectureDiagram'
+import { ProjectGallery } from '../components/ProjectGallery'
 import { ProjectVisual } from '../components/ProjectVisual'
 import { Reveal } from '../components/Reveal'
 import { projects } from '../data/projects'
@@ -138,6 +139,7 @@ export function ProjectPage() {
 
       <section className="section pt-16 md:pt-20">
         <div className="shell">
+          <ProjectGallery project={project} />
           <div className="grid gap-14 lg:grid-cols-[1fr_300px] lg:gap-16">
             <div className="space-y-12">
               <CaseSection number="01" label={t('detail.problem')}>

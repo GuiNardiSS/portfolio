@@ -49,6 +49,12 @@ public/
 Todo o conteúdo dos projetos está em `src/data/projects.ts`. Cada projeto tem textos
 em português e inglês, stack, métricas, arquitetura, decisões técnicas e links.
 
+## Galerias
+
+Cada estudo de caso inclui uma galeria horizontal com capturas reais do sistema,
+legendas em PT/EN e lightbox com navegação por teclado. As imagens ficam em
+`public/projects/` e são renderizadas pelo componente `ProjectGallery`.
+
 Os contatos ficam centralizados em `src/site.ts`.
 
 ## Deploy na Vercel
