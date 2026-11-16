@@ -91,9 +91,6 @@ export function ProjectPage() {
                   <span className="text-cyan-200/80">{pick(project.category)}</span>
                   <span className="text-white/20">/</span>
                   <span className="text-white/35">{project.year}</span>
-                  <span className="rounded-full border border-emerald-400/20 bg-emerald-400/[0.07] px-2.5 py-1 text-[0.56rem] text-emerald-300/90">
-                    {pick(project.status)}
-                  </span>
                 </div>
               </Reveal>
 
@@ -224,10 +221,6 @@ export function ProjectPage() {
                   <div className="flex items-start justify-between gap-3">
                     <dt className="text-white/35">{t('detail.year')}</dt>
                     <dd className="text-right text-soft">{project.year}</dd>
-                  </div>
-                  <div className="flex items-start justify-between gap-3">
-                    <dt className="text-white/35">{t('detail.status')}</dt>
-                    <dd className="text-right text-soft">{pick(project.status)}</dd>
                   </div>
                 </dl>
 

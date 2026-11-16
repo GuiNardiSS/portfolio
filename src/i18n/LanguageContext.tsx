@@ -109,7 +109,6 @@ const dict = {
   'detail.stack': { pt: 'Stack', en: 'Stack' },
   'detail.role': { pt: 'Papel', en: 'Role' },
   'detail.year': { pt: 'Ano', en: 'Year' },
-  'detail.status': { pt: 'Status', en: 'Status' },
   'detail.context': { pt: 'Contexto', en: 'Context' },
   'detail.repo': { pt: 'Abrir repositório', en: 'Open repository' },
   'detail.next': { pt: 'Próximo projeto', en: 'Next project' },

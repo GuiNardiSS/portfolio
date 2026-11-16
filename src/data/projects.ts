@@ -21,7 +21,6 @@ export type Project = {
   category: Localized
   year: string
   role: Localized
-  status: Localized
   tagline: Localized
   summary: Localized
   problem: Localized
@@ -47,7 +46,6 @@ export const projects: Project[] = [
     category: { pt: 'Aplicativo mobile + backend', en: 'Mobile app + backend' },
     year: '2026',
     role: { pt: 'Mobile, backend e design system', en: 'Mobile, backend and design system' },
-    status: { pt: 'Projeto de portfólio · modo demonstração', en: 'Portfolio project · demo mode' },
     tagline: {
       pt: 'Espiritualidade e bem-estar em uma experiência premium, offline e verificável.',
       en: 'Spirituality and wellbeing in a premium, offline and verifiable experience.',
@@ -302,7 +300,6 @@ export const projects: Project[] = [
     category: { pt: 'Automação & dados públicos', en: 'Automation & public data' },
     year: '2026',
     role: { pt: 'Arquitetura, backend e operação', en: 'Architecture, backend and operations' },
-    status: { pt: 'Em produção', en: 'In production' },
     tagline: {
       pt: 'Um monitor de licitações que lê o PNCP de hora em hora e entrega só o que importa.',
       en: 'A tender monitor that reads Brazil’s public procurement portal every two hours and delivers only what matters.',
@@ -480,7 +477,6 @@ export const projects: Project[] = [
     category: { pt: 'Frontend institucional', en: 'Institutional frontend' },
     year: '2023 — 2026',
     role: { pt: 'Frontend e arquitetura de componentes', en: 'Frontend and component architecture' },
-    status: { pt: 'Projeto em produção', en: 'Project in production' },
     tagline: {
       pt: 'Um portal municipal com mais de 100 serviços, perfis e documentos.',
       en: 'A city portal with over 100 services, audiences and documents.',
@@ -684,7 +680,6 @@ export const projects: Project[] = [
     category: { pt: 'Frontend + geração de documentos', en: 'Frontend + document generation' },
     year: '2023',
     role: { pt: 'Frontend e fluxos de formulário', en: 'Frontend and form flows' },
-    status: { pt: 'Projeto em produção', en: 'Project in production' },
     tagline: {
       pt: 'Formulários guiados que transformam a burocracia do MEI em documentos prontos.',
       en: 'Guided forms that turn MEI bureaucracy into ready-to-use documents.',
