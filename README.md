@@ -67,6 +67,10 @@ npx vercel
 npx vercel --prod
 ```
 
+> No Windows, se a CLI falhar com `EPERM` ao criar symlinks, habilite o
+> **Modo de Desenvolvedor** (`start ms-settings:developers`) ou importe o
+> repositório diretamente pelo painel da Vercel.
+
 ## Rotas
 
 - `/` — home
